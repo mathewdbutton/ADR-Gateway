@@ -1,0 +1,66 @@
+[{
+  "Name":"<COMPLETE_ME>",
+  "EvidenceDir":"<COMPLETE_ME>",
+  "TestData": {
+      "Personas": {
+          "Joseph": {
+              "NonConsentedAccountId": "<COMPLETE_ME>"
+          }
+      },
+      "DefaultCustomerId":"<COMPLETE_ME>",
+      "Boundaries": {
+          "oldest-time": "<COMPLETE_ME>",
+          "newest-time": "<COMPLETE_ME>",
+          "min-amount": "1.00",
+          "max-amount": "500.00"
+      }
+  },
+  "SystemUnderTest": {
+      "Register": {
+          "DiscoveryUri": "https://api.int.cdr.gov.au/idp",
+          "SecureUri": "https://secure.api.int.cdr.gov.au/cdr-register",
+          "PublicUri": "https://api.int.cdr.gov.au/cdr-register"
+      },
+      "AdrGateway": {
+          "FrontEndUrls": {
+              "JWKSEndpoint": "https://<COMPLETE_ME>/e.g.jwks",
+              "RevocationEndpoint": "https://localhost:9102/revoke"
+          }
+      },
+      "Dataholder": "<COMPLETE_ME>"
+  },
+  "TestServiceDefinitions": {
+      "AdrGateway": {
+          "Jwks": "adrgw.private.jwks.json",
+          "RegisterBaseUris": {
+              "Oidc": "https://<COMPLETE_ME>/idp",
+              "SecureResource": "https://<COMPLETE_ME>/cdr-register"
+          },
+          "AdrClients": [
+              {
+                  "authCallbackUri": "<COMPLETE_ME>",
+                  "systemId": "rab-affordability-analyzer"
+              }
+          ],
+          "DataRecipientApplication": {
+              "LegalEntityId":"<COMPLETE_ME>",
+              "BrandId":"<COMPLETE_ME>",
+              "ProductId":"<COMPLETE_ME>",
+              "redirect_uris":["https://<COMPLETE_ME>"]
+          },
+    "mtls": {
+      "ca": "file:root-ca.cert.pem",
+      "cert": "file:rab.client.cert.pem",
+      "key": "file:rab.client.key.pem"
+    }
+      },
+  "AdrDb": {
+    "type": "mssql",
+    "host": "<COMPLETE_ME>",
+    "database": "<COMPLETE_ME>",
+    "username": "<COMPLETE_ME>",
+    "password": "<COMPLETE_ME>"
+  }
+  },
+  "Automation": {}
+}]

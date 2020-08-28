@@ -70,6 +70,11 @@ Include the following settings for Mocha Test Explorer. These are already config
 "mochaExplorer.require": ["source-map-support/register"],
 ```
 
+## Conformance testing
+
+See [Conformance Test Suite](./doc/Conformance%20Test%20Suite.md).
+
+
 # Licence
 
 Copyright (c) 2020 Regional Australia Bank
